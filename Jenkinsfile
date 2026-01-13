@@ -13,12 +13,17 @@ pipeline {
                 sh '''
                     ls -la
                     node --version
-                    npm --version
+                    npm --versions
                     npm ci
                     npm run build
                     ls -la
                 '''
             }
+        }
+        stage("Test"){
+            sh '''
+                echo " Test Stage"
+            '''
         }
     }
 }
